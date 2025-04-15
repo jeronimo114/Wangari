@@ -1,0 +1,14 @@
+// main.scss
+// --------------------------------------------------
+// Main SCSS file for Wangari Website
+// Imports all partial SCSS files using the modern @use syntax
+// --------------------------------------------------
+
+// Import variables (using alias * to bring them into scope)
+@use "partials/variables" as *;
+
+// Import other partials
+@use "partials/base";
+@use "partials/header";
+@use "partials/hero";
+@use "partials/sections";

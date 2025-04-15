@@ -1,0 +1,62 @@
+// partials/_hero.scss
+// --------------------------------------------------
+// Hero Section styles
+// --------------------------------------------------
+
+@use "sass:color";
+@use "partials/variables" as *;
+
+.hero {
+  background-image: url("../images/your-hero-image.jpg"); // Replace with correct image path
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  > div {
+    position: relative;
+    z-index: 10;
+    color: white;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    @media (min-width: 768px) {
+      font-size: 4rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  a {
+    display: inline-block;
+    background-color: $color-orange;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust($color-orange, $lightness: -10%);
+    }
+  }
+}

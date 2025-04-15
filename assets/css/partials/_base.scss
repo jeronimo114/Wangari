@@ -1,0 +1,21 @@
+// partials/_base.scss
+// --------------------------------------------------
+// Global base styles and resets
+// --------------------------------------------------
+
+@use "partials/variables" as *;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  background-color: white;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

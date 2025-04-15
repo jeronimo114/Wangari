@@ -1,0 +1,23 @@
+// partials/_header.scss
+// --------------------------------------------------
+// Header and Navigation styles
+// --------------------------------------------------
+
+@use "partials/variables" as *;
+
+.header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem; // 64px
+  }
+
+  // Additional mobile or navigation styles may be added as needed.
+}
