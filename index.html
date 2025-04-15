@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <!-- Basic Meta Data -->
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wangari - Elegancia Salvaje</title>
 
-    <!-- Tailwind CSS CDN for mobile-first responsive design -->
+    <!-- Tailwind CSS (para utilidades) -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
 
-    <!-- Link to the compiled CSS from SCSS -->
-    <!-- In your build process, compile main.scss to main.css and place it under assets/css/ -->
+    <!-- Google Fonts para tipografías: Libre Baskerville (encabezados) y Raleway (cuerpo) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Raleway:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS compilado desde SCSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body class="bg-white text-gray-800">
-    <!-- ================= Navigation Header ================= -->
+    <!-- ================= HEADER / NAVEGACIÓN ================= -->
     <header class="header fixed w-full z-10 bg-white shadow">
       <div
         class="container mx-auto px-4 flex items-center justify-between h-16"
       >
-        <!-- Brand/Logo -->
-        <div class="text-xl font-bold">Wangari</div>
-        <!-- Mobile Hamburger Menu Button -->
+        <!-- Logo o Nombre de la Marca -->
+        <div class="text-2xl font-bold tracking-wide">Wangari</div>
+        <!-- Botón menú móvil -->
         <button id="menu-toggle" class="md:hidden focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor">
             <path
@@ -35,145 +40,136 @@
             ></path>
           </svg>
         </button>
-        <!-- Desktop Navigation Links -->
+        <!-- Menú de navegación para escritorio -->
         <nav id="nav-links" class="hidden md:flex space-x-6">
-          <a href="#hero" class="hover:text-blue-600">Home</a>
-          <a href="#about" class="hover:text-blue-600">About</a>
-          <a href="#experiences" class="hover:text-blue-600">Experiences</a>
-          <a href="#contact" class="hover:text-blue-600">Contact</a>
+          <a href="#hero" class="hover:text-blue-600">Inicio</a>
+          <a href="#about" class="hover:text-blue-600">Quiénes Somos</a>
+          <a href="#experiences" class="hover:text-blue-600">Experiencias</a>
+          <a href="#contact" class="hover:text-blue-600">Contacto</a>
         </nav>
       </div>
-      <!-- Mobile Navigation Links (initially hidden) -->
+      <!-- Menú de navegación móvil -->
       <nav id="mobile-nav" class="hidden px-4 md:hidden">
-        <a href="#hero" class="block py-2 border-b">Home</a>
-        <a href="#about" class="block py-2 border-b">About</a>
-        <a href="#experiences" class="block py-2 border-b">Experiences</a>
-        <a href="#contact" class="block py-2 border-b">Contact</a>
+        <a href="#hero" class="block py-2 border-b">Inicio</a>
+        <a href="#about" class="block py-2 border-b">Quiénes Somos</a>
+        <a href="#experiences" class="block py-2 border-b">Experiencias</a>
+        <a href="#contact" class="block py-2 border-b">Contacto</a>
       </nav>
     </header>
 
-    <!-- ================= Hero Section ================= -->
-    <section
-      id="hero"
-      class="hero h-screen flex items-center justify-center relative"
-    >
-      <!-- Dark overlay for better text contrast -->
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="hero relative flex items-center justify-center">
+      <!-- Overlay oscuro para mejorar la legibilidad del texto -->
       <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div class="text-center text-white z-10">
-        <!-- Hero Title -->
+      <div class="z-10 text-center text-white px-4">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Elegancia Salvaje</h1>
-        <!-- Hero Subtitle -->
         <p class="text-xl md:text-2xl mb-8">
-          Discover the wild elegance of Wangari
+          Descubre la fusión de sofisticación y naturaleza en Wangari
         </p>
-        <!-- Call-to-Action Button -->
         <a
           href="#about"
           class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-full transition duration-300"
-          >Explore</a
         >
+          Conoce Más
+        </a>
       </div>
     </section>
 
-    <!-- ================= About Section ================= -->
+    <!-- ================= SECCIÓN: QUIÉNES SOMOS ================= -->
     <section id="about" class="py-16 px-4 md:px-8 bg-gray-100">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-6 text-center">About Wangari</h2>
+        <h2 class="text-3xl font-bold mb-6 text-center">Quiénes Somos</h2>
         <p class="max-w-2xl mx-auto text-center text-lg">
-          Wangari is a unique haven of biodiversity and ecological elegance
-          where every detail celebrates nature. Embrace the fusion of comfort
-          and wild exploration.
+          Wangari es un refugio de biodiversidad donde la aventura se mezcla con
+          la elegancia. Un espacio para descubrir, explorar y disfrutar de la
+          naturaleza en su máxima expresión.
         </p>
       </div>
     </section>
 
-    <!-- ================= Experiences Section ================= -->
+    <!-- ================= SECCIÓN: EXPERIENCIAS ================= -->
     <section id="experiences" class="py-16 px-4 md:px-8">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-6 text-center">Experiences</h2>
+        <h2 class="text-3xl font-bold mb-6 text-center">Experiencias</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Each experience item will animate in when scrolled into view -->
+          <!-- Elementos de experiencia con animación al hacer scroll -->
           <div class="experience-item p-6 border rounded shadow-sm bg-white">
-            <h3 class="text-2xl font-semibold mb-4">Wildlife Exploration</h3>
+            <h3 class="text-2xl font-semibold mb-4">Exploración de la Fauna</h3>
             <p>
-              Discover the beauty of local flora and fauna with guided tours
-              through the most biodiverse habitats.
+              Descubre la increíble diversidad de especies en su entorno natural
+              con nuestros recorridos guiados.
             </p>
           </div>
           <div class="experience-item p-6 border rounded shadow-sm bg-white">
-            <h3 class="text-2xl font-semibold mb-4">Birdwatching</h3>
+            <h3 class="text-2xl font-semibold mb-4">Observación de Aves</h3>
             <p>
-              Experience the vibrant colors and sounds of indigenous bird
-              species in their natural habitat.
+              Experimenta el vibrante canto y los colores de las aves autóctonas
+              en su hábitat.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= Fixed Call-to-Action Button ================= -->
+    <!-- ================= BOTÓN DE CONTACTO FIJO ================= -->
     <a
       href="#contact"
-      class="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white py-3 px-5 rounded-full shadow-lg z-20"
+      class="fixed bottom-4 right-4 contact-button text-white py-3 px-5 rounded-full shadow-lg z-20"
     >
-      Contact Us
+      Contáctanos
     </a>
 
-    <!-- ================= Contact Section ================= -->
+    <!-- ================= SECCIÓN: CONTACTO ================= -->
     <section id="contact" class="py-16 px-4 md:px-8 bg-gray-100">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
+        <h2 class="text-3xl font-bold mb-6 text-center">Contacto</h2>
         <div class="max-w-lg mx-auto">
           <form>
-            <!-- Name Field -->
             <div class="mb-4">
-              <label class="block mb-2 font-semibold" for="name">Name</label>
+              <label for="name" class="block mb-2 font-semibold">Nombre</label>
               <input
                 type="text"
                 id="name"
                 class="w-full border rounded p-3"
-                placeholder="Your Name"
+                placeholder="Tu Nombre"
               />
             </div>
-            <!-- Email Field -->
             <div class="mb-4">
-              <label class="block mb-2 font-semibold" for="email">Email</label>
+              <label for="email" class="block mb-2 font-semibold">Email</label>
               <input
                 type="email"
                 id="email"
                 class="w-full border rounded p-3"
-                placeholder="Your Email"
+                placeholder="Tu Email"
               />
             </div>
-            <!-- Message Field -->
             <div class="mb-4">
-              <label class="block mb-2 font-semibold" for="message"
-                >Message</label
+              <label for="message" class="block mb-2 font-semibold"
+                >Mensaje</label
               >
               <textarea
                 id="message"
                 class="w-full border rounded p-3"
                 rows="4"
-                placeholder="Your Message"
+                placeholder="Tu Mensaje"
               ></textarea>
             </div>
-            <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded transition duration-300"
+              class="w-full contact-button text-white py-3 rounded transition duration-300"
             >
-              Send Message
+              Enviar Mensaje
             </button>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- ================= Scripts for Animations and Interactions ================= -->
-    <!-- Include GSAP and ScrollTrigger via CDN -->
+    <!-- ================= SCRIPTS ================= -->
+    <!-- GSAP y ScrollTrigger para animaciones -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <!-- Custom JavaScript file -->
+    <!-- JavaScript personalizado -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

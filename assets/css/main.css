@@ -1,10 +1,20 @@
+@charset "UTF-8";
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: white;
   color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Libre Baskerville", serif;
 }
 
 .container {
@@ -18,7 +28,8 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
+  /* Estilos adicionales para el menú móvil se pueden agregar aquí si se requiere */
 }
 .header .container {
   display: flex;
@@ -138,5 +149,9 @@ section p {
 }
 #contact form button:hover {
   background-color: rgb(30.1449275362, 125.8550724638, 52);
+}
+
+.contact-button {
+  background-color: #80b3f5 !important;
 }
 /*# sourceMappingURL=main.css.map */

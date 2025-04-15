@@ -1,13 +1,13 @@
-// partials/_hero.scss
+// assets/css/partials/_hero.scss
 // --------------------------------------------------
-// Hero Section styles
+// Estilos para la sección HERO
 // --------------------------------------------------
 
 @use "sass:color";
 @use "partials/variables" as *;
 
 .hero {
-  background-image: url("../images/your-hero-image.jpg"); // Replace with correct image path
+  background-image: url("../images/your-hero-image.jpg"); // Actualiza con la ruta correcta de la imagen
   background-size: cover;
   background-position: center;
   position: relative;

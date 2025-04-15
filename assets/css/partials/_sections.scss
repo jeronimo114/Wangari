@@ -1,6 +1,6 @@
-// partials/_sections.scss
+// assets/css/partials/_sections.scss
 // --------------------------------------------------
-// Styles for various sections (About, Experiences, Contact)
+// Estilos para secciones variadas (Quiénes Somos, Experiencias, Contacto)
 // --------------------------------------------------
 
 @use "sass:color";
@@ -28,7 +28,6 @@ section {
 }
 
 #experiences {
-  // Grid styling for experience items
   .experience-item {
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;

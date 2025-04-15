@@ -1,14 +1,12 @@
-// main.scss
+// assets/css/main.scss
 // --------------------------------------------------
-// Main SCSS file for Wangari Website
-// Imports all partial SCSS files using the modern @use syntax
+// Archivo principal de SCSS para Wangari
 // --------------------------------------------------
 
-// Import variables (using alias * to bring them into scope)
+// Importa variables y demás módulos
 @use "partials/variables" as *;
-
-// Import other partials
 @use "partials/base";
 @use "partials/header";
 @use "partials/hero";
 @use "partials/sections";
+@use "partials/footer";

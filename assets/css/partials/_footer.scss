@@ -1,0 +1,6 @@
+@use "sass:color";
+@use "partials/variables" as *;
+
+.contact-button {
+  background-color: $color-blue !important;
+}

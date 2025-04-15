@@ -1,10 +1,13 @@
-// partials/_variables.scss
+// assets/css/partials/_variables.scss
 // --------------------------------------------------
-// Variables for Wangari Website
+// Variables de diseño para Wangari
 // --------------------------------------------------
 
-$color-orange: #c44900;
-$color-blue: #80b3f5;
-$color-green: #28a745;
+$color-orange: #c44900; // Naranja Atardecer
+$color-yellow: #df8d03; // Amarillo Amanecer
+$color-blue: #80b3f5; // Azul Sabana
+$color-green: #28a745; // Verde (para botones)
 $color-gray-light: #f7fafc;
-$font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-header: "Libre Baskerville", serif; // Para títulos y encabezados
+$font-body: "Raleway", sans-serif; // Para cuerpo de texto
