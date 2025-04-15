@@ -1,96 +1,168 @@
 // assets/js/main.js
 // --------------------------------------------------
 // JavaScript personalizado para Wangari
-// Maneja el menú móvil y las animaciones con GSAP y ScrollTrigger
+// Módulos:
+// 1. MobileMenu: gestión del menú móvil (hamburger) con animación smooth
+// 2. SmoothScroll: desplazamiento suave para el botón CTA en el hero
+// 3. ScrollAnimations: animaciones de elementos al hacer scroll
 // --------------------------------------------------
 
-// Toggle menú móvil
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  const mobileNav = document.getElementById("mobile-nav");
-  mobileNav.classList.toggle("hidden");
-});
+(() => {
+  "use strict";
 
-// Animaciones de Scroll usando GSAP y ScrollTrigger
-gsap.utils.toArray(".experience-item").forEach(function (elem) {
-  gsap.from(elem, {
-    scrollTrigger: {
-      trigger: elem,
-      start: "top 80%", // Inicia la animación cuando el elemento alcanza el 80% del viewport
-      toggleActions: "play none none none",
-    },
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power2.out",
-  });
-});
+  // ==================================================
+  // MÓDULO: MobileMenu - Gestión del menú móvil
+  // ==================================================
+  const MobileMenu = (() => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
 
-// Animar el texto del hero al cargar la página
-gsap.from("#hero h1", {
-  duration: 1,
-  opacity: 0,
-  y: -50,
-  ease: "power2.out",
-});
-gsap.from("#hero p", {
-  duration: 1,
-  delay: 0.5,
-  opacity: 0,
-  y: 50,
-  ease: "power2.out",
-});
+    const openMenu = () => {
+      mobileNav.classList.remove("hidden");
+      gsap.fromTo(
+        mobileNav,
+        { height: 0, opacity: 0 },
+        { height: "auto", opacity: 1, duration: 0.5, ease: "power2.out" }
+      );
+    };
 
-// Animación de la cabecera de la sección "Quiénes Somos"
-gsap.from("#about h2", {
-  scrollTrigger: {
-    trigger: "#about h2",
-    start: "top 80%",
-    toggleActions: "play none none none",
-  },
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  ease: "power2.out",
-});
+    const closeMenu = () => {
+      gsap.to(mobileNav, {
+        height: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+          mobileNav.classList.add("hidden");
+          gsap.set(mobileNav, { clearProps: "height,opacity" });
+        },
+      });
+    };
 
-// --------------------------------------------------
-// Custom Smooth Scroll para el botón de CTA en la sección hero
-// con una duración extendida para un desplazamiento más lento
-// --------------------------------------------------
+    const toggleMenu = () => {
+      if (mobileNav.classList.contains("hidden")) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    };
 
-// Función de easing (easeInOutQuad)
-function easeInOutQuad(t, b, c, d) {
-  t /= d / 2;
-  if (t < 1) return (c / 2) * t * t + b;
-  t--;
-  return (-c / 2) * (t * (t - 2) - 1) + b;
-}
+    const init = () => {
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", toggleMenu);
+      }
+    };
 
-// Función para realizar el smooth scroll hacia un elemento objetivo en una duración específica
-function smoothScrollTo(target, duration) {
-  const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-  const startPosition = window.scrollY;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
+    return { init };
+  })();
 
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) {
+  // ==================================================
+  // MÓDULO: SmoothScroll - Desplazamiento suave para el botón CTA
+  // ==================================================
+  const SmoothScroll = (() => {
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+
+    function scrollToTarget(target, duration) {
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(
+          timeElapsed,
+          startPosition,
+          distance,
+          duration
+        );
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
       requestAnimationFrame(animation);
     }
-  }
-  requestAnimationFrame(animation);
-}
 
-// Agregamos el listener al botón de CTA del hero
-document.querySelector(".hero a").addEventListener("click", function (e) {
-  e.preventDefault(); // Prevenir el comportamiento por defecto
-  const targetId = this.getAttribute("href"); // Ejemplo: "#about"
-  const targetEl = document.querySelector(targetId);
-  if (targetEl) {
-    smoothScrollTo(targetEl, 1200); // Duración de 1500ms para un scroll más lento
-  }
-});
+    const init = () => {
+      const ctaButton = document.querySelector(".hero a");
+      if (ctaButton) {
+        ctaButton.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = ctaButton.getAttribute("href");
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) scrollToTarget(targetEl, 1100);
+        });
+      }
+    };
+
+    return { init };
+  })();
+
+  // ==================================================
+  // MÓDULO: ScrollAnimations - Animaciones al hacer scroll
+  // ==================================================
+  const ScrollAnimations = (() => {
+    const initAnimations = () => {
+      // Animar cada experiencia al llegar a la vista
+      gsap.utils.toArray(".experience-item").forEach((elem) => {
+        gsap.from(elem, {
+          scrollTrigger: {
+            trigger: elem,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power2.out",
+        });
+      });
+
+      // Animar el texto del hero al cargar
+      gsap.from("#hero h1", {
+        duration: 1,
+        opacity: 0,
+        y: -50,
+        ease: "power2.out",
+      });
+      gsap.from("#hero p", {
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+      });
+
+      // Animar el título de la sección "Quiénes Somos" o Proyecto
+      gsap.from("#project h2", {
+        scrollTrigger: {
+          trigger: "#project h2",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+      });
+    };
+
+    const init = () => initAnimations();
+    return { init };
+  })();
+
+  // ==================================================
+  // Inicialización de todos los módulos cuando el DOM esté listo
+  // ==================================================
+  document.addEventListener("DOMContentLoaded", () => {
+    MobileMenu.init();
+    SmoothScroll.init();
+    ScrollAnimations.init();
+  });
+})();

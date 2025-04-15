@@ -28,14 +28,22 @@ h6 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
-  z-index: 100;
-  /* Estilos adicionales para el menú móvil se pueden agregar aquí si se requiere */
+  z-index: 10;
+  /* Opcional: estilos adicionales para los enlaces del menú en escritorio */
 }
 .header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 4rem;
+}
+.header nav a {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.header nav a:hover {
+  color: #80b3f5;
 }
 
 .hero {
@@ -149,6 +157,26 @@ section p {
 }
 #contact form button:hover {
   background-color: rgb(30.1449275362, 125.8550724638, 52);
+}
+
+/* Proyecto & Ubicación */
+#project {
+  background-color: #f7fafc;
+}
+
+/* Urbanismo y Diseño */
+#urbanism {
+  background-color: white;
+}
+
+/* Conservación */
+#conservation {
+  background-color: #f7fafc;
+}
+
+/* Beneficios y Estilo de Vida */
+#benefits {
+  background-color: white;
 }
 
 .contact-button {

@@ -7,7 +7,7 @@
 @use "partials/variables" as *;
 
 .hero {
-  background-image: url("../images/your-hero-image.jpg"); // Actualiza con la ruta correcta de la imagen
+  background-image: url("../images/your-hero-image.jpg"); // Actualiza la ruta según corresponda
   background-size: cover;
   background-position: center;
   position: relative;
@@ -54,7 +54,6 @@
     border-radius: 9999px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-
     &:hover {
       background-color: color.adjust($color-orange, $lightness: -10%);
     }

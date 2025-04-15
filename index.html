@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Metadatos básicos -->
+    <!-- Metadatos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wangari - Elegancia Salvaje</title>
+    <title>Wangari Reserva Residencial</title>
 
-    <!-- Tailwind CSS (para utilidades) -->
+    <!-- Tailwind CSS para utilidades rápidas -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
 
-    <!-- Google Fonts para tipografías: Libre Baskerville (encabezados) y Raleway (cuerpo) -->
+    <!-- Google Fonts: Libre Baskerville (encabezados) y Raleway (cuerpo) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Raleway:wght@400;600&display=swap"
       rel="stylesheet"
@@ -27,9 +27,9 @@
       <div
         class="container mx-auto px-4 flex items-center justify-between h-16"
       >
-        <!-- Logo o Nombre de la Marca -->
+        <!-- Logo / Nombre de la Marca -->
         <div class="text-2xl font-bold tracking-wide">Wangari</div>
-        <!-- Botón menú móvil -->
+        <!-- Botón para menú móvil -->
         <button id="menu-toggle" class="md:hidden focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor">
             <path
@@ -40,86 +40,133 @@
             ></path>
           </svg>
         </button>
-        <!-- Menú de navegación para escritorio -->
+        <!-- Navegación escritorio -->
         <nav id="nav-links" class="hidden md:flex space-x-6">
           <a href="#hero" class="hover:text-blue-600">Inicio</a>
-          <a href="#about" class="hover:text-blue-600">Quiénes Somos</a>
-          <a href="#experiences" class="hover:text-blue-600">Experiencias</a>
+          <a href="#project" class="hover:text-blue-600">Proyecto</a>
+          <a href="#urbanism" class="hover:text-blue-600">Diseño</a>
+          <a href="#conservation" class="hover:text-blue-600">Conservación</a>
+          <a href="#benefits" class="hover:text-blue-600">Beneficios</a>
           <a href="#contact" class="hover:text-blue-600">Contacto</a>
         </nav>
       </div>
-      <!-- Menú de navegación móvil -->
+      <!-- Navegación móvil -->
       <nav id="mobile-nav" class="hidden px-4 md:hidden">
         <a href="#hero" class="block py-2 border-b">Inicio</a>
-        <a href="#about" class="block py-2 border-b">Quiénes Somos</a>
-        <a href="#experiences" class="block py-2 border-b">Experiencias</a>
+        <a href="#project" class="block py-2 border-b">Proyecto</a>
+        <a href="#urbanism" class="block py-2 border-b">Diseño</a>
+        <a href="#conservation" class="block py-2 border-b">Conservación</a>
+        <a href="#benefits" class="block py-2 border-b">Beneficios</a>
         <a href="#contact" class="block py-2 border-b">Contacto</a>
       </nav>
     </header>
 
     <!-- ================= HERO ================= -->
     <section id="hero" class="hero relative flex items-center justify-center">
-      <!-- Overlay oscuro para mejorar la legibilidad del texto -->
+      <!-- Overlay para mejorar legibilidad -->
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="z-10 text-center text-white px-4">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Elegancia Salvaje</h1>
         <p class="text-xl md:text-2xl mb-8">
-          Descubre la fusión de sofisticación y naturaleza en Wangari
+          Sé uno con la naturaleza en el corazón de Colombia
         </p>
         <a
-          href="#about"
+          href="#project"
           class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-full transition duration-300"
         >
-          Conoce Más
+          Conoce el Proyecto
         </a>
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: QUIÉNES SOMOS ================= -->
-    <section id="about" class="py-16 px-4 md:px-8 bg-gray-100">
+    <!-- ================= PROYECTO & UBICACIÓN ================= -->
+    <section id="project" class="py-16 px-4 md:px-8 bg-gray-100">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-6 text-center">Quiénes Somos</h2>
-        <p class="max-w-2xl mx-auto text-center text-lg">
-          Wangari es un refugio de biodiversidad donde la aventura se mezcla con
-          la elegancia. Un espacio para descubrir, explorar y disfrutar de la
-          naturaleza en su máxima expresión.
+        <h2 class="text-3xl font-bold mb-6 text-center">
+          Wangari Reserva Residencial
+        </h2>
+        <p class="max-w-2xl mx-auto text-center text-lg mb-8">
+          42 lotes en unidad cerrada, cada uno con un área promedio de 10,000
+          m², ubicados en una zona estratégica en el corazón de Colombia, entre
+          Bogotá y Medellín.
         </p>
+        <!-- Mapa o infografía representativa (placeholder) -->
+        <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
+          <span class="text-gray-600"
+            >Mapa interactivo / Imagen de ubicación</span
+          >
+        </div>
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: EXPERIENCIAS ================= -->
-    <section id="experiences" class="py-16 px-4 md:px-8">
+    <!-- ================= URBANISMO Y DISEÑO ================= -->
+    <section id="urbanism" class="py-16 px-4 md:px-8">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-6 text-center">Experiencias</h2>
+        <h2 class="text-3xl font-bold mb-6 text-center">
+          Urbanismo Inspirador
+        </h2>
+        <p class="max-w-2xl mx-auto text-center text-lg mb-8">
+          Inspirado en los elementos: Aire, Tierra, Fuego y Agua, Wangari
+          integra lotes, corredores de bosque nativo, senderos, lagos y jardines
+          que crean un entorno único para vivir en conexión con la naturaleza.
+        </p>
+        <!-- Renders o ilustraciones del proyecto (placeholder) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Elementos de experiencia con animación al hacer scroll -->
-          <div class="experience-item p-6 border rounded shadow-sm bg-white">
-            <h3 class="text-2xl font-semibold mb-4">Exploración de la Fauna</h3>
-            <p>
-              Descubre la increíble diversidad de especies en su entorno natural
-              con nuestros recorridos guiados.
-            </p>
+          <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
+            <span class="text-gray-600">Render / Ilustración 1</span>
           </div>
-          <div class="experience-item p-6 border rounded shadow-sm bg-white">
-            <h3 class="text-2xl font-semibold mb-4">Observación de Aves</h3>
-            <p>
-              Experimenta el vibrante canto y los colores de las aves autóctonas
-              en su hábitat.
-            </p>
+          <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
+            <span class="text-gray-600">Render / Ilustración 2</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= BOTÓN DE CONTACTO FIJO ================= -->
-    <a
-      href="#contact"
-      class="fixed bottom-4 right-4 contact-button text-white py-3 px-5 rounded-full shadow-lg z-20"
-    >
-      Contáctanos
-    </a>
+    <!-- ================= CONSERVACIÓN ECOLÓGICA ================= -->
+    <section id="conservation" class="py-16 px-4 md:px-8 bg-gray-100">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-center">
+          Conservación Ecológica
+        </h2>
+        <p class="max-w-2xl mx-auto text-center text-lg mb-8">
+          Nuestro compromiso es restaurar y preservar el ecosistema. Inspirados
+          en el legado de Wangari Maathai, fomentamos la biodiversidad y
+          protegemos el bosque húmedo tropical.
+        </p>
+        <!-- Ejemplos gráficos o testimoniales (placeholder) -->
+        <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
+          <span class="text-gray-600">Imagen / Gráfico sobre conservación</span>
+        </div>
+      </div>
+    </section>
 
-    <!-- ================= SECCIÓN: CONTACTO ================= -->
+    <!-- ================= BENEFICIOS Y ESTILO DE VIDA ================= -->
+    <section id="benefits" class="py-16 px-4 md:px-8">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-center">
+          Beneficios y Estilo de Vida
+        </h2>
+        <p class="max-w-2xl mx-auto text-center text-lg mb-8">
+          Vive en un entorno seguro y exclusivo con amplias áreas comunes,
+          senderos naturales y servicios de primer nivel. Una comunidad vibrante
+          y en sintonía con la naturaleza te espera.
+        </p>
+        <!-- Testimonios, fotos de estilo de vida o carrusel (placeholder) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="w-full h-48 bg-gray-300 flex items-center justify-center">
+            <span class="text-gray-600">Imagen 1</span>
+          </div>
+          <div class="w-full h-48 bg-gray-300 flex items-center justify-center">
+            <span class="text-gray-600">Imagen 2</span>
+          </div>
+          <div class="w-full h-48 bg-gray-300 flex items-center justify-center">
+            <span class="text-gray-600">Imagen 3</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
     <section id="contact" class="py-16 px-4 md:px-8 bg-gray-100">
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-6 text-center">Contacto</h2>
@@ -156,7 +203,7 @@
             </div>
             <button
               type="submit"
-              class="w-full contact-button text-white py-3 rounded transition duration-300"
+              class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded transition duration-300"
             >
               Enviar Mensaje
             </button>
@@ -165,11 +212,17 @@
       </div>
     </section>
 
-    <!-- ================= SCRIPTS ================= -->
-    <!-- GSAP y ScrollTrigger para animaciones -->
+    <!-- ================= BOTÓN DE CONTACTO FIJO (sigue visible) ================= -->
+    <a
+      href="#contact"
+      class="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white py-3 px-5 rounded-full shadow-lg z-20"
+    >
+      Contáctanos
+    </a>
+
+    <!-- ================= SCRIPTS: GSAP, ScrollTrigger y JS personalizado ================= -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <!-- JavaScript personalizado -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>
