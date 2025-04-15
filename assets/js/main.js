@@ -4,11 +4,14 @@
 // Módulos:
 // 1. MobileMenu: gestión del menú móvil (hamburger) con animación smooth
 // 2. SmoothScroll: desplazamiento suave para el botón CTA en el hero
-// 3. ScrollAnimations: animaciones de elementos al hacer scroll
+// 3. ScrollAnimations: animaciones al hacer scroll, incluyendo el efecto parallax en el hero
 // --------------------------------------------------
 
 (() => {
   "use strict";
+
+  // Registro del plugin ScrollTrigger (requerido para que funcione el parallax)
+  gsap.registerPlugin(ScrollTrigger);
 
   // ==================================================
   // MÓDULO: MobileMenu - Gestión del menú móvil
@@ -96,7 +99,7 @@
           e.preventDefault();
           const targetId = ctaButton.getAttribute("href");
           const targetEl = document.querySelector(targetId);
-          if (targetEl) scrollToTarget(targetEl, 1100);
+          if (targetEl) scrollToTarget(targetEl, 1500);
         });
       }
     };
@@ -105,10 +108,22 @@
   })();
 
   // ==================================================
-  // MÓDULO: ScrollAnimations - Animaciones al hacer scroll
+  // MÓDULO: ScrollAnimations - Animaciones al hacer scroll (incluyendo efecto parallax en el hero)
   // ==================================================
   const ScrollAnimations = (() => {
     const initAnimations = () => {
+      // Efecto Parallax para la sección hero:
+      gsap.to(".hero", {
+        backgroundPosition: "50% 100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
       // Animar cada experiencia al llegar a la vista
       gsap.utils.toArray(".experience-item").forEach((elem) => {
         gsap.from(elem, {
@@ -124,7 +139,7 @@
         });
       });
 
-      // Animar el texto del hero al cargar
+      // Animar el texto del hero al cargar la página
       gsap.from("#hero h1", {
         duration: 1,
         opacity: 0,
@@ -139,7 +154,7 @@
         ease: "power2.out",
       });
 
-      // Animar el título de la sección "Quiénes Somos" o Proyecto
+      // Animar el título de la sección "Proyecto"
       gsap.from("#project h2", {
         scrollTrigger: {
           trigger: "#project h2",

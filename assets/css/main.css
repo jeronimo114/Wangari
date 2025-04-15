@@ -47,7 +47,7 @@ h6 {
 }
 
 .hero {
-  background-image: url("../images/your-hero-image.jpg");
+  background-image: url("../images/hero-image.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
