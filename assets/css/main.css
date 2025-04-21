@@ -47,15 +47,16 @@ h6 {
 }
 
 .hero {
-  background-image: url("../images/hero-image.jpg");
-  background-size: 2440px;
+  background-image: url("../images/hero-image.png");
+  background-size: cover;
   background-position: center;
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  text-align: left;
 }
 .hero::before {
   content: "";
@@ -69,8 +70,10 @@ h6 {
   color: white;
 }
 .hero h1 {
+  font-family: "Libre Baskerville", serif;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
   .hero h1 {
@@ -78,25 +81,32 @@ h6 {
   }
 }
 .hero p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
 }
 @media (min-width: 768px) {
   .hero p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
-.hero a {
-  display: inline-block;
+.hero .hero-btn {
+  font-family: "Raleway", sans-serif;
   background-color: #c44900;
   color: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 2rem;
   border-radius: 9999px;
   text-decoration: none;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
-.hero a:hover {
+.hero .hero-btn:hover {
   background-color: rgb(145, 54.0051020408, 0);
+}
+@media (min-width: 768px) {
+  .hero .hero-btn {
+    font-size: 1.125rem;
+  }
 }
 
 section {

@@ -7,55 +7,74 @@
 @use "partials/variables" as *;
 
 .hero {
-  background-image: url("../images/hero-image.jpg"); // Actualiza la ruta según corresponda
-  background-size: 2440px;
+  padding-top: 4rem;
+  background-image: url("../images/hero-image.png");
+  background-size: cover;
   background-position: center;
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  text-align: left;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    @media (min-width: 768px) {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   }
 
   > div {
     position: relative;
     z-index: 10;
     color: white;
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 45%;
+    }
+    @media (min-width: 1024px) {
+      width: 40%;
+    }
   }
 
   h1 {
+    font-family: "Libre Baskerville", serif;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
     @media (min-width: 768px) {
       font-size: 4rem;
     }
   }
 
   p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
     @media (min-width: 768px) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 
-  a {
-    display: inline-block;
+  .hero-btn {
+    font-family: "Raleway", sans-serif;
     background-color: $color-orange;
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 2rem;
     border-radius: 9999px;
     text-decoration: none;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
     &:hover {
       background-color: color.adjust($color-orange, $lightness: -10%);
+    }
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
     }
   }
 }
