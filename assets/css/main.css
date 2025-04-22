@@ -47,66 +47,86 @@ h6 {
 }
 
 .hero {
+  background-color: #f9f6ef;
+  padding: 80px 60px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+}
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
+}
+
+.hero-text,
+.hero-image-container {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.hero-text {
+  color: #1a2a39;
+}
+
+.hero-text hr {
+  width: 4rem;
+  border: none;
+  border-top: 2px solid #c5a880;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 56px;
+  line-height: 1.2;
+  color: #1a2432;
+  margin: 0 0 10px 0;
+}
+
+.hero-subtitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #3d4a5b;
+  margin: 0 0 40px 0;
+}
+
+.hero-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-container hr {
+  border-top: 1px solid #c4b28a;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+}
+
+.hero-img-inner {
+  margin: 20px;
+  width: calc(100% - 40px);
+  aspect-ratio: 1/1;
   background-image: url("../images/hero-image.png");
   background-size: cover;
   background-position: center;
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 2rem;
-  text-align: left;
+  flex: 1;
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.hero > div {
-  position: relative;
-  z-index: 10;
-  color: white;
-}
-.hero h1 {
-  font-family: "Libre Baskerville", serif;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-@media (min-width: 768px) {
-  .hero h1 {
-    font-size: 4rem;
-  }
-}
-.hero p {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.125rem;
-  margin-bottom: 2.5rem;
-}
-@media (min-width: 768px) {
-  .hero p {
-    font-size: 1.25rem;
-  }
-}
-.hero .hero-btn {
-  font-family: "Raleway", sans-serif;
-  background-color: #c44900;
-  color: white;
-  padding: 0.75rem 2rem;
+
+.hero-cta {
+  display: inline-block;
+  background-color: #1a2a39;
+  color: #ffffff;
+  padding: 1rem 2rem;
   border-radius: 9999px;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s;
 }
-.hero .hero-btn:hover {
-  background-color: rgb(145, 54.0051020408, 0);
-}
-@media (min-width: 768px) {
-  .hero .hero-btn {
-    font-size: 1.125rem;
-  }
+.hero-cta:hover {
+  opacity: 0.9;
 }
 
 section {

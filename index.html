@@ -42,7 +42,13 @@
         class="container mx-auto px-4 flex items-center justify-between h-16"
       >
         <!-- Logo / Nombre de la Marca -->
-        <div class="text-2xl font-bold tracking-wide">Wangari</div>
+        <a href="#hero" class="logo block">
+          <img
+            src="assets/images/text-logo.png"
+            alt="Wangari logo"
+            class="h-8 md:h-10"
+          />
+        </a>
         <!-- Botón para menú móvil -->
         <button id="menu-toggle" class="md:hidden focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor">
@@ -76,21 +82,23 @@
     </header>
 
     <!-- ================= HERO ================= -->
-    <section
-      id="hero"
-      class="hero relative flex items-center justify-start px-8"
-    >
-      <!-- Oscurecer fondo -->
-      <div class="absolute inset-0 bg-black opacity-50"></div>
-      <!-- Contenedor de texto -->
-      <div class="z-10 text-left text-white max-w-md">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Explora la<br />Elegancia Salvaje
-        </h1>
-        <p class="text-lg md:text-xl mb-10">
-          Descubre la fusión Perfecta entre naturaleza y comfort
-        </p>
-        <a href="#project" class="hero-btn transition duration-300">Explorar</a>
+    <section id="hero" class="hero">
+      <!-- Texto hero -->
+      <div class="hero-text">
+        <div class="max-w-lg">
+          <h1 class="hero-title">Elegancia que Inspira</h1>
+          <hr />
+          <p class="hero-subtitle">
+            Una experiencia residencial única fusionando diseño y naturaleza.
+          </p>
+          <a href="#project" class="hero-cta"> Conoce Más </a>
+        </div>
+      </div>
+      <!-- Imagen hero con líneas -->
+      <div class="hero-image-container">
+        <hr />
+        <div class="hero-img-inner flex-1"></div>
+        <hr />
       </div>
     </section>
 

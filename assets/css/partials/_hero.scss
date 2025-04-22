@@ -1,80 +1,88 @@
-// assets/css/partials/_hero.scss
-// --------------------------------------------------
-// Estilos para la sección HERO
-// --------------------------------------------------
-
 @use "sass:color";
 @use "partials/variables" as *;
 
+// Hero container
 .hero {
-  padding-top: 4rem;
+  background-color: #f9f6ef;
+  padding: 80px 60px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.hero-text,
+.hero-image-container {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+// Texto hero
+.hero-text {
+  color: #1a2a39;
+}
+
+.hero-text hr {
+  width: 4rem;
+  border: none;
+  border-top: 2px solid #c5a880;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 56px;
+  line-height: 1.2;
+  color: #1a2432;
+  margin: 0 0 10px 0;
+}
+
+.hero-subtitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #3d4a5b;
+  margin: 0 0 40px 0;
+}
+
+// Hero image wrapper (no background here)
+.hero-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-container hr {
+  border-top: 1px solid #c4b28a;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+}
+
+// Inner div with actual background
+.hero-img-inner {
+  margin: 20px;
+  width: calc(100% - 40px);
+  aspect-ratio: 1 / 1;
   background-image: url("../images/hero-image.png");
   background-size: cover;
   background-position: center;
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 2rem;
-  text-align: left;
+  flex: 1;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    @media (min-width: 768px) {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  > div {
-    position: relative;
-    z-index: 10;
-    color: white;
-    width: 100%;
-    @media (min-width: 768px) {
-      width: 45%;
-    }
-    @media (min-width: 1024px) {
-      width: 40%;
-    }
-  }
-
-  h1 {
-    font-family: "Libre Baskerville", serif;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    @media (min-width: 768px) {
-      font-size: 4rem;
-    }
-  }
-
-  p {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.125rem;
-    margin-bottom: 2.5rem;
-    @media (min-width: 768px) {
-      font-size: 1.25rem;
-    }
-  }
-
-  .hero-btn {
-    font-family: "Raleway", sans-serif;
-    background-color: $color-orange;
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    &:hover {
-      background-color: color.adjust($color-orange, $lightness: -10%);
-    }
-    @media (min-width: 768px) {
-      font-size: 1.125rem;
-    }
+.hero-cta {
+  display: inline-block;
+  background-color: #1a2a39;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.9;
   }
 }
